@@ -22,9 +22,10 @@ public class DatabaseManager {
         this.plugin = plugin;
         FileConfiguration cfg = plugin.getConfig();
         String database = cfg.getString("mysql.database", "aervexfeedback");
+        String address = cfg.getString("mysql.address", "localhost:3306");
         this.username = cfg.getString("mysql.username", "root");
         this.password = cfg.getString("mysql.password", "");
-        this.url = "jdbc:mysql://localhost:3306/" + database + "?useSSL=false&autoReconnect=true&characterEncoding=utf8";
+        this.url = "jdbc:mysql://" + address + "/" + database + "?useSSL=false&autoReconnect=true&characterEncoding=utf8";
         this.posturl = cfg.getString("posturl", "none");
 
         CompletableFuture.runAsync(() -> {

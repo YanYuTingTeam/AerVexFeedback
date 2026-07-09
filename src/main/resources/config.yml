@@ -1,6 +1,8 @@
 bg: 'url'
 btn: 'url'
 close: 'url'
+btnDark: 'url'
+closeDark: 'url'
 bgs: '0,0,256,256'
 btns: '100,200,64,32'
 closes: '180,200,32,32'
@@ -14,6 +16,7 @@ input2tip: '请输入相关玩家名或自己的玩家名~ (在聊天中发送)'
 posturl: 'none'
 
 mysql:
+  address: 'localhost:3306'
   database: ''
   username: ''
   password: ''

@@ -17,8 +17,10 @@ public class FeedbackConfig {
     private String bgUrl;
     private int bgX, bgY, bgW, bgH;
     private String btnUrl;
+    private String btnDark;
     private int btnX, btnY, btnW, btnH;
     private String closeUrl;
+    private String closeDark;
     private int closeX, closeY, closeW, closeH;
     private int input1X, input1Y, input1W, input1H, input1Max;
     private int input2X, input2Y, input2W, input2H, input2Max;
@@ -39,10 +41,14 @@ public class FeedbackConfig {
         bgX = bgs[0]; bgY = bgs[1]; bgW = bgs[2]; bgH = bgs[3];
 
         btnUrl = cfg.getString("btn", "");
+        btnDark = cfg.getString("btnDark", "");
+        if (btnDark.isEmpty()) btnDark = btnUrl;
         int[] btns = parseIntArray(cfg.getString("btns", "0,0,64,32"));
         btnX = btns[0]; btnY = btns[1]; btnW = btns[2]; btnH = btns[3];
 
         closeUrl = cfg.getString("close", "");
+        closeDark = cfg.getString("closeDark", "");
+        if (closeDark.isEmpty()) closeDark = closeUrl;
         int[] closes = parseIntArray(cfg.getString("closes", "0,0,32,32"));
         closeX = closes[0]; closeY = closes[1]; closeW = closes[2]; closeH = closes[3];
 
@@ -101,12 +107,14 @@ public class FeedbackConfig {
     public int getBgH() { return bgH; }
 
     public String getBtnUrl() { return btnUrl; }
+    public String getBtnDark() { return btnDark; }
     public int getBtnX() { return btnX; }
     public int getBtnY() { return btnY; }
     public int getBtnW() { return btnW; }
     public int getBtnH() { return btnH; }
 
     public String getCloseUrl() { return closeUrl; }
+    public String getCloseDark() { return closeDark; }
     public int getCloseX() { return closeX; }
     public int getCloseY() { return closeY; }
     public int getCloseW() { return closeW; }
