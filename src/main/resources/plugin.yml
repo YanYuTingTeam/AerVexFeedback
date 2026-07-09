@@ -1,0 +1,22 @@
+name: AerVexFeedback
+version: 1.0
+main: com.aermini.vexfeedback.AerVexFeedback
+depend: [VexView]
+softdepend: [VexView]
+description: A feedback plugin using VexView GUI
+author: AerMini
+commands:
+  aervexfeedback:
+    description: AerVexFeedback main command
+    usage: /aervexfeedback reload | open [player]
+    permission: aervexfeedback.use
+permissions:
+  aervexfeedback.reload:
+    description: Reload the plugin config
+    default: op
+  aervexfeedback.open:
+    description: Open feedback UI for a player
+    default: op
+  aervexfeedback.use:
+    description: Use the plugin command
+    default: op

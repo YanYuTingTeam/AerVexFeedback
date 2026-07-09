@@ -1,0 +1,42 @@
+bg: 'url'
+btn: 'url'
+close: 'url'
+bgs: '0,0,256,256'
+btns: '100,200,64,32'
+closes: '180,200,32,32'
+input1: '30,80,200,20,100'
+input2: '30,120,200,20,20'
+
+success: '&a反馈成功！'
+input1tip: '请输入你的意见或建议~ (在聊天中发送)'
+input2tip: '请输入相关玩家名或自己的玩家名~ (在聊天中发送)'
+
+posturl: 'none'
+
+mysql:
+  database: ''
+  username: ''
+  password: ''
+
+inv:
+  slot: 54
+  title: '&b请选择要反馈的玩法'
+  items:
+    '0':
+      material: BED
+      data: 0
+      title: '&b起床战争'
+      lore:
+        - '&e点击反馈此玩法'
+    '1':
+      material: DIAMOND_SWORD
+      data: 0
+      title: '&c空岛战争'
+      lore:
+        - '&e点击反馈此玩法'
+    '2':
+      material: GOLD_INGOT
+      data: 0
+      title: '&6空岛生存'
+      lore:
+        - '&e点击反馈此玩法'
