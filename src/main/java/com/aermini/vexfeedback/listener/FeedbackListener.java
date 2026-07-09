@@ -86,7 +86,7 @@ public class FeedbackListener implements Listener {
     private void openVexGui(Player player, int gameSlot) {
         FeedbackConfig cfg = plugin.getFeedbackConfig();
 
-        try {
+        if (hasVexView(player)) {
             VexGui gui = new VexGui(
                     cfg.getBgUrl(),
                     cfg.getBgX(),
@@ -144,7 +144,7 @@ public class FeedbackListener implements Listener {
             gui.addComponent(closeBtn);
 
             VexViewAPI.openGui(player, gui);
-        } catch (Exception e) {
+        } else {
             startChatFallback(player, gameSlot);
         }
     }
@@ -154,6 +154,14 @@ public class FeedbackListener implements Listener {
         chatGameSlot.put(uid, gameSlot);
         waitingChatStep.put(uid, 1);
         player.sendMessage(plugin.getFeedbackConfig().getInput1tip());
+    }
+
+    public static boolean hasVexView(Player player) {
+        try {
+            return VexViewAPI.getPlayerClientWindowWidth(player) > 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     private void handleSubmit(Player player, int gameSlot) {
